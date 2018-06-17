@@ -1,6 +1,7 @@
 var wins = 0;
 var losses = 0;
 var x = 10;
+//set = x, this allows me to change guesses allowed easily and it work throughout code
 var guessesRemaining = x;
 var guessedSoFar = ""
 
