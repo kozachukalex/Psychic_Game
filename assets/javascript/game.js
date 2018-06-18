@@ -17,8 +17,12 @@ function clear(compSelect) { //allows function to be called to reset after a win
     console.log(compSelect);
     return compSelect; // spits back letter chosen to outside of function
 };
-
+//initiates start and writes in the default values.
 var compSelect = clear(compSelect)
+document.getElementById("wins").innerText = wins;
+document.getElementById("losses").innerText = losses;
+document.getElementById("guessesRemaining").innerText = guessesRemaining;
+document.getElementById("guessedSoFar").innerText = guessedSoFar;
 
 
 document.onkeyup = function (event) {
@@ -30,6 +34,7 @@ document.onkeyup = function (event) {
         if (userGuess == guessedSoFar[i]) {
             isDuplicate = true; //if userGuess is in array of guessedSoFar it turns true, alerts, and stops 
             alert("You already tried that letter!");
+            break; //added after working on word guess
         }
     };
     if (!isDuplicate) { //verifies that isDuplicate is still false. Without this, counters still move
