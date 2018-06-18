@@ -18,7 +18,8 @@ function clear(compSelect) { //allows function to be called to reset after a win
     return compSelect; // spits back letter chosen to outside of function
 };
 
-var compSelect = clear(compSelect) //issue with this variable being always the first when page loads. Working on fixing
+var compSelect = clear(compSelect)
+
 
 document.onkeyup = function (event) {
     var userGuess = event.key;
@@ -36,7 +37,7 @@ document.onkeyup = function (event) {
             if (userGuess === compSelect) { //if user guesses correct letter
                 wins++;
                 alert("You were correct! The letter was " + compSelect);
-                clear();
+                compSelect = clear(); //calls clear, reset guessesRemaining, guessedSoFar and chooses new letter
             }
             else { //if user does not select correct letter
                 guessesRemaining--;
@@ -46,7 +47,7 @@ document.onkeyup = function (event) {
             if (guessesRemaining === 0) { //if user runs out of guesses
                 losses++;
                 alert("Ouch! Out of guesses!");
-                clear();
+                compSelect = clear(); //calls clear, reset guessesRemaining, guessedSoFar and chooses new letter
             };
 
         };
